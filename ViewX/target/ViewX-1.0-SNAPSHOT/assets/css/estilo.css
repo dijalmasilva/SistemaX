@@ -1,0 +1,192 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12/03/2016, 14:12:45
+    Author     : Dijalma Silva <dijalmacz@gmail.com>
+*/
+
+*{
+    margin: 0;
+    padding: 0
+}
+
+body {
+    text-align: center;
+}
+
+.dj-background__vermelho{
+    background: #DE5A51;
+}
+
+.dj-background__cinza{
+    background: white;
+}
+
+.dj-form {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.dj-color__withe{
+    color: white;
+}
+
+.dj-margin__left{
+    margin-left: 70px !important;
+}
+
+.dj-header {
+    text-align: left;
+    height: 180px;
+    background: #DE5A51;
+    box-shadow: 0px 0px 5px 0px #000;
+}
+
+.dj-info__sistema{
+    padding: 10px;
+}
+
+.dj-info__sistema h5{
+    margin: 30px auto 0px 30px !important;
+}
+
+.dj-info__usuario {
+    position: relative;
+    float: right;
+    width: 400px;
+    text-align: left;
+}
+
+.dj-info__usuario-resp{
+    display: none;
+}
+
+.dj-info__usuario a{
+    color: #35B8C1;
+}
+
+.dj-info__usuario .dj-login{
+    float: left;
+    width: 200px;
+    display: inline;
+    text-align: right;
+    padding-top: 30px;
+}
+
+.dj-info__usuario .dj-perfil{
+    text-align: center;
+    float: right;
+    width: 200px;
+}
+
+.dj-section{
+    margin-top: 30px !important;
+    background: white;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px -2px #DE5A51;
+}
+
+.dj-img__perfil{
+    display: inline;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+.dj-list__funcionalidades ul li{
+    display: inline-block;
+    margin: 18px;
+}
+
+.dj-breadcrumb{
+    text-align: left;
+    margin: 20px;
+}
+
+.dj-breadcrumb ul li{
+    display: inline-block;
+    font-size: 20px;
+}
+
+.dj-button{
+    width: 50px;
+    height: 50px;
+}
+
+.dj-button img{
+    width: 40px;
+    height: 40px;
+}
+
+.dj-img__menor {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+table {
+    width: 98% !important;
+    margin: 0px auto;
+}
+
+tbody tr:hover{
+    background: #efeff3;
+    cursor: pointer;
+}
+
+#buscar{
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-top: -8px !important;
+    display: none;
+}
+
+.dj-user__img{
+    width: 35%;
+}
+
+.dj-user__info{
+    float: right;
+    width: 60%;
+}
+
+tbody tr {
+    background: white;
+}
+
+.tr-select{
+    background: #bfbfbf;
+    cursor: default !important;
+}
+
+@media(max-width: 663px){
+    .dj-info__sistema{
+        width: 100%;
+        margin: 0 auto !important;
+    }
+
+    .dj-section{
+        width: 94% !important;
+    }
+
+    .dj-info__usuario{
+        display: none;
+    }
+
+    .dj-info__usuario-resp{
+        float: right;
+        padding: 10px;
+        display: block;
+        text-align: right;
+    }
+}
+
+@media(max-width: 800px){
+    .dj-section{
+        width: 80%;
+    }
+}
