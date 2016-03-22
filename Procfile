@@ -1,2 +1,1 @@
-web: java -Dserver.port=$PORT -Dspring.profiles.active=pro -jar Cartapio-Web/target/cardapio.war
-
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar ViewX/target/*.war

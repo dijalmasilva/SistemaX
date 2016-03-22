@@ -69,6 +69,15 @@ function loadFoto(valor){
     reader.readAsDataURL(valor.files[0]);
 }
 
+function loadPicture(valor){
+    var reader = new FileReader(valor);
+    reader.onload = function (e) {
+        setImage(e.target.result);
+    };
+    
+    reader.readAsDataURL(valor.files[0]);
+}
+
 function loadFotoPerfil(valor){
     var reader = new FileReader(valor);
     reader.onload = function (e) {
