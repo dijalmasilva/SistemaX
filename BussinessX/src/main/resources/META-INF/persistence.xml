@@ -6,10 +6,10 @@
     <class>dijalmasilva.bussinessx.entidades.Feriado</class>
     <class>dijalmasilva.bussinessx.entidades.LocalDataConvert</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/SistemaX"/>
-      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.url" value="postgres://mihjsdzwvwqxrd:nZCdVfTza6yM3noycQTC5AhUEh@ec2-107-22-246-252.compute-1.amazonaws.com:5432/d85amkteivdn6k"/>
+      <property name="javax.persistence.jdbc.user" value="mihjsdzwvwqxrd"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="123"/>
+      <property name="javax.persistence.jdbc.password" value="nZCdVfTza6yM3noycQTC5AhUEh"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>
