@@ -14,8 +14,8 @@
         <img src="/assets/icons/SistemaX.png" width="400"/>
         <br><br><br><br>
     <c:if test="${result != null}">
-        <%@include file="modalResposta.jsp" %>
-        <button data-toggle="modal" data-target="#modal" class="invisible" id="showModal"></button>
+        <%@include file="notification.jsp" %>
+        <button onclick="abrirModalNotificacao()" class="invisible" id="showModal"></button>
     </c:if>
     <form class="form-group dj-form" action="/index/logar" method="post">
         <div class="form-group">

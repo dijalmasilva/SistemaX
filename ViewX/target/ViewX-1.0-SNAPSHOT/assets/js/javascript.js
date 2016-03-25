@@ -6,6 +6,7 @@
 $(document).ready(function () {
 
     $('#showModal').trigger('click');
+    $('#notificacao').hide();
 
     //filtro na tabela de clientes cadastrados
     $("#buscar").keyup(function () {
@@ -110,4 +111,19 @@ function resetColors(){
 function changeColor(row){
     resetColors();
     $(row).addClass('tr-select');
+}
+
+function abrirModalNotificacao() {
+    modal = $('#notificacao');
+    modal.fadeIn(100);
+    modal.animate({
+        bottom: "+=20px"
+    }, 400);
+
+    setTimeout(function () {
+        modal.fadeOut(600);
+        modal.animate({
+            bottom: "-=20px"
+        });
+    }, 5000);
 }
