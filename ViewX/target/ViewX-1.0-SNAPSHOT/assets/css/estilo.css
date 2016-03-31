@@ -163,6 +163,33 @@ tbody tr {
     cursor: default !important;
 }
 
+.scope-notification{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+.notification{
+    position: relative !important;
+    margin: 0 auto;
+    width: 350px;
+    height: 80px;
+    background: white !important;
+    z-index: 20;
+    box-shadow: 0px 0px 10px 2px #341D39;
+}
+
+.notification:hover{
+    transition-duration: 0.4s;
+    opacity: 0.8;
+}
+
+.notification .message{
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 8px;
+}
+
+
 @media(max-width: 663px){
     .dj-info__sistema{
         width: 100%;

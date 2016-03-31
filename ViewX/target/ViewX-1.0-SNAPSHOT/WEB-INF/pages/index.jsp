@@ -9,14 +9,13 @@
 <!DOCTYPE html>
 <html>
     <%@include file="head.jsp" %>
+    <c:if test="${result != null}">
+        <%@include file="notification.jsp" %>
+    </c:if>
     <body class="text-center dj-background__vermelho">
         <br><br><br><br>
         <img src="/assets/icons/SistemaX.png" width="400"/>
         <br><br><br><br>
-    <c:if test="${result != null}">
-        <%@include file="notification.jsp" %>
-        <button onclick="abrirModalNotificacao()" class="invisible" id="showModal"></button>
-    </c:if>
     <form class="form-group dj-form" action="/index/logar" method="post">
         <div class="form-group">
             <input  class="form-control text-center" type="text" placeholder="Nome de usuário / Email" name="login" autofocus="" required="">

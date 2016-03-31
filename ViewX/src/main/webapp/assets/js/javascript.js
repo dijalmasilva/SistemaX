@@ -5,8 +5,7 @@
  */
 $(document).ready(function () {
 
-    $('#showModal').trigger('click');
-    $('#notificacao').hide();
+    abrirModalNotificacao();
 
     //filtro na tabela de clientes cadastrados
     $("#buscar").keyup(function () {
@@ -114,6 +113,7 @@ function changeColor(row){
 }
 
 function abrirModalNotificacao() {
+    console.log("modal abriu!");
     modal = $('#notificacao');
     modal.fadeIn(100);
     modal.animate({
