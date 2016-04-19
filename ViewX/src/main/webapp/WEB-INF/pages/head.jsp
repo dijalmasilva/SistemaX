@@ -11,7 +11,11 @@
     <link rel="icon" type="image/png" href="/assets/icons/iconX.png"/>
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="/assets/css/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/fullcalendar.min.css" />
     <script src="/assets/js/jquery-2.1.4.min.js" type="text/javascript"></script>
     <script src="/assets/js/bootstrap.js" type="text/javascript"></script>
     <script src="/assets/js/javascript.js" type="text/javascript"></script>
+    <script src="/assets/js/moment.min.js" type="text/javascript"></script>
+    <script src="/assets/js/fullcalendar.min.js" type="text/javascript"></script>
+    <script src="/assets/js/fullcalendar.js" type="text/javascript"></script>
 </head>

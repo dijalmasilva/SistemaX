@@ -30,7 +30,19 @@
                         </li>
                         <li>
                             <img src="/assets/icons/rest5.png" width="40"><br>
-                            <a href="#">Gerenciar Feriados</a>
+                            <a href="/home/managerFeriado">Gerenciar Feriados</a>
+                        </li>
+                        <li>
+                            <img src="/assets/icons/class.png" width="40"><br>
+                            <a href="/home/managerSala">Gerenciar Salas</a>
+                        </li>
+                        <li>
+                            <img src="/assets/icons/material.png" width="40"><br>
+                            <a href="/home/managerMaterial">Gerenciar Material</a>
+                        </li>
+                        <li>
+                            <img src="/assets/icons/blocos.png" width="40"><br>
+                            <a href="/home/managerBloco">Gerenciar Bloco</a>
                         </li>
                     </ul>
                 </div>

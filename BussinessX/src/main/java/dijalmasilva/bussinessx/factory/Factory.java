@@ -5,7 +5,11 @@
  */
 package dijalmasilva.bussinessx.factory;
 
+import dijalmasilva.bussinessx.interfaces.DaoBloco;
+import dijalmasilva.bussinessx.interfaces.DaoEvento;
 import dijalmasilva.bussinessx.interfaces.DaoFeriado;
+import dijalmasilva.bussinessx.interfaces.DaoMaterial;
+import dijalmasilva.bussinessx.interfaces.DaoSala;
 import dijalmasilva.bussinessx.interfaces.DaoUsuario;
 
 /**
@@ -17,4 +21,12 @@ public interface Factory {
     DaoUsuario criarDaoUsuario();
     
     DaoFeriado criarDaoFeriado();
+    
+    DaoBloco criarDaoBloco();
+    
+    DaoEvento criarDaoEvento();
+    
+    DaoSala criarDaoSala();
+    
+    DaoMaterial criarDaoMaterial();
 }

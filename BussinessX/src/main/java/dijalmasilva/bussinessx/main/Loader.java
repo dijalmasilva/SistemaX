@@ -5,8 +5,16 @@
  */
 package dijalmasilva.bussinessx.main;
 
+import dijalmasilva.bussinessx.entidades.Bloco;
+import dijalmasilva.bussinessx.entidades.Material;
 import dijalmasilva.bussinessx.entidades.Usuario;
+import dijalmasilva.bussinessx.enums.TypeStatus;
+import dijalmasilva.bussinessx.enums.UserType;
+import dijalmasilva.bussinessx.interfaces.DaoBloco;
+import dijalmasilva.bussinessx.interfaces.DaoMaterial;
 import dijalmasilva.bussinessx.interfaces.DaoUsuario;
+import dijalmasilva.bussinessx.jpa.DaoBlocoImpl;
+import dijalmasilva.bussinessx.jpa.DaoMaterialImpl;
 import dijalmasilva.bussinessx.jpa.DaoUsuarioImpl;
 
 /**
@@ -18,15 +26,21 @@ public class Loader {
     public static void main(String[] args) {
 
         DaoUsuario du = new DaoUsuarioImpl();
-        Usuario find = du.buscarByNome("Pipoca Man");
-        if (find != null) {
-            System.out.println("Find: " + find.getMatricula());
-        }
+        DaoMaterial dm = new DaoMaterialImpl();
+        DaoBloco db = new DaoBlocoImpl();
+//        Bloco b = new Bloco("Bloco Eng. Civil");
+//        db.salvar(b);
+//        Material material = new Material("Lápis", 35, TypeStatus.DISPONIVEL);
+//        for (int i =0; i < material.getQuantidade(); i++){
+//            dm.salvar(material);
+//            material.setTombamento(0);
+//        }
+        Usuario u2 = new Usuario("admin@gmail.com", "Admin", "xschg123", "foto".getBytes(), UserType.ADMINISTRADOR, "122133");
+        du.salvar(u2);
+        
 //        DaoFeriado df = new DaoFeriadoImpl();
-//        Usuario u2 = new Usuario("aluno@gmail.com", "Aluno", "dijalma123", "foto".getBytes(), UserType.ALUNO, "122133");
 //        Usuario u3 = new Usuario("monitor@gmail.com", "Monitor", "dijalma123", "foto".getBytes(), UserType.MONITOR, "123143");
 //        Usuario u4 = new Usuario(53L, "professor@gmail.com", "Professor", "dijalma123", "foto".getBytes(), UserType.PROFESSOR, "123113");
-//        du.salvar(u2);
 //        du.remover(u4);
 //        Usuario find = du.buscar(51L);
 //        System.out.println("Usuario:" + find.getEmail());
@@ -49,5 +63,6 @@ public class Loader {
 //            }
 //        }
 //        System.out.println("Feriado: " + buscar.getNome());
+
     }
 }

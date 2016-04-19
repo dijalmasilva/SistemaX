@@ -5,6 +5,10 @@
     <class>dijalmasilva.bussinessx.entidades.Feriado</class>
     <class>dijalmasilva.bussinessx.entidades.Usuario</class>
     <class>dijalmasilva.bussinessx.entidades.LocalDataConvert</class>
+    <class>dijalmasilva.bussinessx.entidades.Bloco</class>
+    <class>dijalmasilva.bussinessx.entidades.Evento</class>
+    <class>dijalmasilva.bussinessx.entidades.Material</class>
+    <class>dijalmasilva.bussinessx.entidades.Sala</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/SistemaX"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
