@@ -69,7 +69,8 @@
                                 <td>${room.nome}</td>
                                 <td>${room.bloco.nome}</td>
                                 <td>${room.capacidade}</td>
-                                <td>${room.status}</td>
+                                
+                                <td>DISPONIVEL</td>
                             </tr>
                         </c:forEach>
                     </tbody>
