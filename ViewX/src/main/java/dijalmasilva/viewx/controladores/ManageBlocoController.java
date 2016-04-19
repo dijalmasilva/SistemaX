@@ -43,16 +43,23 @@ public class ManageBlocoController {
         return managerBloco(req);
     }
     
-    @RequestMapping(value = {"/editar"}, method = RequestMethod.POST)
-    public String editarBloco(String nomeAntigo, String nomeNovo, HttpServletRequest reg){
+    @RequestMapping(value = {"/edit"}, method = RequestMethod.POST)
+    public String editarBloco(long id, String nomeNovo, HttpServletRequest req){
     
         GerenciaBloco  gb = new GerenciaBloco();
-        Bloco bloco = gb.buscar(nomeAntigo);
+        Bloco b = new Bloco(nomeNovo);
+        boolean atualizou = gb.atualizar(id, b);
         
-        bloco.setNome(nomeNovo);
-        gb.atualizar(bloco);
+        if (atualizou){
+            req.setAttribute("result", "Bloco atualizado com sucesso!");
+            System.out.println("Bloco atualizado com sucesso!");
+        }else{
+            req.setAttribute("result", "Erro ao atualizar bloco!");
+            System.out.println("Erro!");
+        }
         
-        return "gerenciadorBloco";
+        
+        return managerBloco(req);
         
     }
     

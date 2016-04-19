@@ -18,9 +18,11 @@ public interface DaoBloco {
 
     boolean remover(Bloco b);
 
-    boolean atualizar(String nome, Bloco b);
+    boolean atualizar(long id, Bloco b);
 
-    Bloco buscar(String nome);
+    Bloco buscarPorId(long id);
+    
+    Bloco buscarPorNome(String nome);
 
     List<Bloco> todos();
 }

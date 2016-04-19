@@ -29,12 +29,16 @@ public class GerenciaBloco {
         return dao.remover(b);
     }
     
-    public boolean atualizar(Bloco b){
-        return dao.atualizar(b.getNome(), b);
+    public boolean atualizar(long id, Bloco b){
+        return dao.atualizar(id, b);
     }
     
-    public Bloco buscar(String nome){
-        return dao.buscar(nome);
+    public Bloco buscarPorId(long id){
+        return dao.buscarPorId(id);
+    }
+    
+    public Bloco buscarPorNome(String nome){
+        return dao.buscarPorNome(nome);
     }
     
     public List<Bloco> todos(){

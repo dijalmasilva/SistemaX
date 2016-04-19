@@ -60,6 +60,12 @@ function selectRow(id){
     
 }
 
+function selectRowName(nome, id){
+    console.log('selecionou!');
+    $('#idBloco').val(id);
+    $('#nomeNovo').val(nome);
+}
+
 function loadFoto(valor){
     var reader = new FileReader(valor);
     reader.onload = function (e) {

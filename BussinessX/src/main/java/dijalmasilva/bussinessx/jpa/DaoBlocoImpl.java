@@ -40,15 +40,22 @@ public class DaoBlocoImpl implements DaoBloco{
     }
 
     @Override
-    public boolean atualizar(String nome, Bloco b) {
-        Bloco finded = em.find(Bloco.class, nome);
-        finded = b;
+    public boolean atualizar(long id, Bloco b) {
+        Bloco finded = em.find(Bloco.class, id);
+        finded.setNome(b.getNome());
+        em.getTransaction().begin();
         em.merge(finded);
+        em.getTransaction().commit();
         return true;
     }
 
     @Override
-    public Bloco buscar(String nome) {
+    public Bloco buscarPorId(long id) {
+        return em.find(Bloco.class, id);
+    }
+    
+    @Override
+    public Bloco buscarPorNome(String nome) {
         return em.find(Bloco.class, nome);
     }
 

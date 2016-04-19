@@ -9,6 +9,7 @@ package dijalmasilva.bussinessx.entidades;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -19,6 +20,8 @@ import javax.persistence.Id;
 public class Bloco implements Serializable{
 
     @Id
+    @GeneratedValue
+    private long id;
     @Column(length = 50)
     private String nome;
 
@@ -29,6 +32,11 @@ public class Bloco implements Serializable{
         this.nome = nome;
     }
 
+    public Bloco(long id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -37,8 +45,16 @@ public class Bloco implements Serializable{
         this.nome = nome;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "Bloco{" + "nome=" + nome + '}';
+        return "Bloco{" + "id=" + id + ", nome=" + nome + '}';
     }
 }
