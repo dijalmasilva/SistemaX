@@ -18,6 +18,7 @@
             </ul>
         </div>
         <%@include file="modalNovoBloco.jsp" %>
+        <%@include file="modalEditarBloco.jsp" %>
         <%@include file="modalResposta.jsp" %>
         <div class="dj-section">
             <div class="dj-list__funcionalidades">
@@ -31,7 +32,7 @@
                     </li>
                     <li>
                         <div>
-                            <button class="dj-button btn-warning" disabled="">
+                            <button data-toggle="modal" data-target="#editarBloco" class="dj-button btn-warning" >
                                 <img src="/assets/icons/edit_black.png">
                             </button>
                         </div>

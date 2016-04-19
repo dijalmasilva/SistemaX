@@ -1,4 +1,5 @@
-dijalmasilva/integrationx/gerenciadores/main/Loader.class
-dijalmasilva/integrationx/gerenciadores/GerenciaBloco.class
-dijalmasilva/integrationx/gerenciadores/GerenciaUsuario.class
-dijalmasilva/integrationx/gerenciadores/GerenciaFeriado.class
+dijalmasilva\integrationx\gerenciadores\GerenciaFeriado.class
+dijalmasilva\integrationx\gerenciadores\GerenciaUsuario.class
+dijalmasilva\integrationx\gerenciadores\GerenciaSala.class
+dijalmasilva\integrationx\gerenciadores\main\Loader.class
+dijalmasilva\integrationx\gerenciadores\GerenciaBloco.class

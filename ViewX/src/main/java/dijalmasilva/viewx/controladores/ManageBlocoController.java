@@ -42,4 +42,20 @@ public class ManageBlocoController {
         
         return managerBloco(req);
     }
+    
+    @RequestMapping(value = {"/editar"}, method = RequestMethod.POST)
+    public String editarBloco(String nomeAntigo, String nomeNovo, HttpServletRequest reg){
+    
+        GerenciaBloco  gb = new GerenciaBloco();
+        Bloco bloco = gb.buscar(nomeAntigo);
+        
+        bloco.setNome(nomeNovo);
+        gb.atualizar(bloco);
+        
+        return "gerenciadorBloco";
+        
+    }
+    
+
+    
 }
