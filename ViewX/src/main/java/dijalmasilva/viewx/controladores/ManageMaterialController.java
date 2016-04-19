@@ -6,6 +6,7 @@
 
 package dijalmasilva.viewx.controladores;
 
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ManageMaterialController {
 
     @RequestMapping("")
-    public String managerMaterial(){
+    public String managerMaterial(HttpServletRequest req){
         return "gerenciadorMaterial";
     }
 }
