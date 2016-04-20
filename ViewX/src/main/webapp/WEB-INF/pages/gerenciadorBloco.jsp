@@ -39,9 +39,12 @@
                     </li>
                     <li>
                         <div>
-                                <button class="dj-button btn-danger" class="dj-button btn-warning">
-                                <img src="/assets/icons/trash.png" class="dj-img__menor">
-                            </button>
+                            <form action="/home/managerBloco/remove" method="POST">
+                                <input type="hidden" name="id" id="remove-id" />
+                                <button class="dj-button btn-danger" id="bt-remove">
+                                    <img src="/assets/icons/trash.png" class="dj-img__menor">
+                                </button>
+                            </form>
                         </div>
                     </li>
                     <li>
@@ -63,7 +66,8 @@
                     </thead>
                     <tbody id="ubody">
                         <c:forEach items="${blocos}" var="bloco">
-                            <tr onclick="selectRowName('${bloco.nome}', ${bloco.id}); changeColor(this)">
+                            <tr onclick="selectRowName('${bloco.nome}', ${bloco.id});
+                                    changeColor(this)">
                                 <td>${bloco.nome}</td>
                             </tr>
                         </c:forEach>
@@ -73,7 +77,7 @@
             </div>
         </div>
         <c:if test="${result != null}">
-            <button data-toggle="modal" data-target="#modal" class="invisible" id="showModal">
+            <button data-toggle="modal" data-target="#modal" class="invisible" id="showModal"></button>
         </c:if>
     </body>
 </html>
