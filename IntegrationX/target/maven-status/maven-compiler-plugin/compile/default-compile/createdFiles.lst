@@ -1,14 +1,6 @@
-<<<<<<< HEAD
 dijalmasilva\integrationx\gerenciadores\GerenciaFeriado.class
 dijalmasilva\integrationx\gerenciadores\GerenciaUsuario.class
 dijalmasilva\integrationx\gerenciadores\GerenciaSala.class
 dijalmasilva\integrationx\gerenciadores\main\Loader.class
 dijalmasilva\integrationx\gerenciadores\GerenciaBloco.class
-=======
-dijalmasilva/integrationx/gerenciadores/GerenciaSala.class
-dijalmasilva/integrationx/gerenciadores/main/Loader.class
-dijalmasilva/integrationx/gerenciadores/GerenciaBloco.class
-dijalmasilva/integrationx/gerenciadores/GerenciaUsuario.class
-dijalmasilva/integrationx/gerenciadores/GerenciaMaterial.class
-dijalmasilva/integrationx/gerenciadores/GerenciaFeriado.class
->>>>>>> e31b4256f54dca156e74e3dc29b990514147f4fa
+dijalmasilva\integrationx\gerenciadores\GerenciaMaterial.class

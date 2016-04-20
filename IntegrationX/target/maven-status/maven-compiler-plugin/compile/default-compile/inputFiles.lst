@@ -1,14 +1,6 @@
-<<<<<<< HEAD
 D:\ADS\5 Periodo\PADROES\SistemaX-Padroes\SistemaX\IntegrationX\src\main\java\dijalmasilva\integrationx\gerenciadores\GerenciaSala.java
 D:\ADS\5 Periodo\PADROES\SistemaX-Padroes\SistemaX\IntegrationX\src\main\java\dijalmasilva\integrationx\gerenciadores\main\Loader.java
 D:\ADS\5 Periodo\PADROES\SistemaX-Padroes\SistemaX\IntegrationX\src\main\java\dijalmasilva\integrationx\gerenciadores\GerenciaBloco.java
+D:\ADS\5 Periodo\PADROES\SistemaX-Padroes\SistemaX\IntegrationX\src\main\java\dijalmasilva\integrationx\gerenciadores\GerenciaMaterial.java
 D:\ADS\5 Periodo\PADROES\SistemaX-Padroes\SistemaX\IntegrationX\src\main\java\dijalmasilva\integrationx\gerenciadores\GerenciaUsuario.java
 D:\ADS\5 Periodo\PADROES\SistemaX-Padroes\SistemaX\IntegrationX\src\main\java\dijalmasilva\integrationx\gerenciadores\GerenciaFeriado.java
-=======
-/home/dijalma/MEGA/Workspace/SistemaX/IntegrationX/src/main/java/dijalmasilva/integrationx/gerenciadores/GerenciaUsuario.java
-/home/dijalma/MEGA/Workspace/SistemaX/IntegrationX/src/main/java/dijalmasilva/integrationx/gerenciadores/GerenciaBloco.java
-/home/dijalma/MEGA/Workspace/SistemaX/IntegrationX/src/main/java/dijalmasilva/integrationx/gerenciadores/main/Loader.java
-/home/dijalma/MEGA/Workspace/SistemaX/IntegrationX/src/main/java/dijalmasilva/integrationx/gerenciadores/GerenciaFeriado.java
-/home/dijalma/MEGA/Workspace/SistemaX/IntegrationX/src/main/java/dijalmasilva/integrationx/gerenciadores/GerenciaSala.java
-/home/dijalma/MEGA/Workspace/SistemaX/IntegrationX/src/main/java/dijalmasilva/integrationx/gerenciadores/GerenciaMaterial.java
->>>>>>> e31b4256f54dca156e74e3dc29b990514147f4fa
