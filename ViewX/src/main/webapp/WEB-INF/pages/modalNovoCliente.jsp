@@ -20,7 +20,8 @@
                     <div class="dj-user__info">
                         <input type="text" name="nome" placeholder="Nome de Usuário" class="form-control"
                                required="" autofocus="" pattern="[a-zA-Z0-9]"/><br>
-                        <input type="password" name="senha" placeholder="Senha" class="form-control" required=""/><br>
+                        <input type="password" name="senha" placeholder="Senha" class="form-control" required=""
+                               minlength="8"/><br>
                         <input type="email" name="email" placeholder="Email" class="form-control" required=""/><br>
                         <input type="text" name="matricula" placeholder="Matricula" minlength="6" maxlength="6" class="form-control"
                                required="" title="A matricula deve conter 6 caracteres númericos."/><br>
