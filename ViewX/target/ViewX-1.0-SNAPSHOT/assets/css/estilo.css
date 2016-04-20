@@ -189,6 +189,10 @@ tbody tr {
     padding: 8px;
 }
 
+.table-overflow{
+    height: 400px;
+    overflow-y: auto;
+}
 
 @media(max-width: 663px){
     .dj-info__sistema{

@@ -17,13 +17,14 @@
                 <li>Gerenciar Material</li>
             </ul>
         </div>
+        <%@include file="modalNovoMaterial.jsp" %>
         <%@include file="modalResposta.jsp" %>
         <div class="dj-section">
             <div class="dj-list__funcionalidades">
                 <ul>
                     <li>
                         <div>
-                            <button data-toggle="modal" data-target="#novoCliente" class="dj-button btn-primary">
+                            <button data-toggle="modal" data-target="#novoMaterial" class="dj-button btn-primary">
                                 <img src="/assets/icons/add_black.png">
                             </button>
                         </div>
@@ -59,7 +60,7 @@
                 </ul>
             </div>
             <input class="form-control" type="search" placeholder="Buscar" id="buscar" autofocus="">
-            <div>
+            <div class="table-overflow">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -71,11 +72,11 @@
                     </thead>
                     <tbody id="ubody">
                         <c:forEach items="${materials}" var="material">
-                            <tr onclick="selectRow(${material.id}); changeColor(this);">
+                            <tr onclick="selectRow(${material.tombamento}); changeColor(this);">
                                 <td>${material.nome}</td>
                                 <td>${material.tombamento}</td>
                                 <td>${material.status}</td>
-                                <td>${material.local}</td>
+                                <td>Coordenação</td>
                             </tr>
                         </c:forEach>
                     </tbody>
@@ -83,6 +84,7 @@
                 <br>
             </div>
         </div>
+        <br><br>
         <c:if test="${result != null}">
             <button data-toggle="modal" data-target="#modal" class="invisible" id="showModal">
         </c:if>
