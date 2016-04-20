@@ -20,7 +20,7 @@
                     <div>
                         <br>
                         <input type="text" name="nome" placeholder="Nome de Bloco" class="form-control"
-                               required="" autofocus=""/><br>
+                               required="" autofocus="" maxlength="50"/><br>
                         <br>
                         <div class="text-right">
                             <input type="submit" class="btn btn-primary btn-lg" value="Cadastrar"/>

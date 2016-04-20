@@ -19,7 +19,7 @@
                 <form class="form-group" method="post" action="/home/managerMaterial/add">
                     <div>
                         <input type="text" name="nome" placeholder="Material" class="form-control"
-                               required="" autofocus=""/><br>
+                               required="" autofocus="" maxlength="50"/><br>
                         <input type="number" min="1" name="quantidade" placeholder="Quantidade" class="form-control" required=""/><br>
                         <div class="text-right">
                             <input type="submit" class="btn btn-primary btn-lg" value="Cadastrar"/>
