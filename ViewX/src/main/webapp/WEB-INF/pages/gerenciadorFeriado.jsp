@@ -17,13 +17,15 @@
                 <li>Gerenciar Feriado</li>
             </ul>
         </div>
+        <%@include file="modalNovoFeriado.jsp" %>
+        <%@include file="modalImportarCsv.jsp" %>
         <%@include file="modalResposta.jsp" %>
         <div class="dj-section">
             <div class="dj-list__funcionalidades">
                 <ul>
                     <li>
                         <div>
-                            <button data-toggle="modal" data-target="#novoCliente" class="dj-button btn-primary">
+                            <button data-toggle="modal" data-target="#novoFeriado" class="dj-button btn-primary">
                                 <img src="/assets/icons/add_black.png">
                             </button>
                         </div>
@@ -44,8 +46,8 @@
                     </li>
                     <li>
                         <div class="text-right">
-                            <input type="file" class="invisible" >
-                            <button type="button" class="btn btn-default btn-lg">Importar .csv</button>
+                            <input type="file" class="invisible" >                            
+                            <button data-toggle="modal" data-target="#importarFeriado" type="button" class="btn btn-default btn-lg">Importar .csv</button>
                         </div>
                     </li>
                 </ul>
