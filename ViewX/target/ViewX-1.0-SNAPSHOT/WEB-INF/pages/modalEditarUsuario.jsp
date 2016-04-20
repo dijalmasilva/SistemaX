@@ -19,8 +19,9 @@
                 <form class="form-group" method="post" action="/home/editProfile" enctype="multipart/form-data">
                     <div class="dj-user__info">
                         <input type="text" name="nome" placeholder="Nome de Usuário" class="form-control"
-                               required="" autofocus="" value="${usuario.nome}"/><br>
-                        <input type="password" name="senha" placeholder="Senha" class="form-control" required="" value="${usuario.senha}"/><br>
+                               required="" autofocus="" value="${usuario.nome} " pattern="[a-zA-Z0-9.\s]+$"/><br>
+                        <input type="password" name="senha" placeholder="Senha" class="form-control" required="" value="${usuario.senha}"
+                                minlength="8"/><br>
                         <input type="email" name="email" placeholder="Email" class="form-control" required="" value="${usuario.email}" disabled=""/><br>
                         <input type="text" name="matricula" placeholder="Matricula" minlength="6" maxlength="6" class="form-control"
                                required="" title="A matricula deve conter 6 caracteres númericos." value="${usuario.matricula}" disabled=""/><br>
