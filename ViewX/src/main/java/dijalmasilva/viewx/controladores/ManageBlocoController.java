@@ -57,12 +57,27 @@ public class ManageBlocoController {
             req.setAttribute("result", "Erro ao atualizar bloco!");
             System.out.println("Erro!");
         }
-        
-        
         return managerBloco(req);
         
     }
     
-
+    @RequestMapping(value = {"/remove"}, method = RequestMethod.POST)
+    public String removeBloco (long id , HttpServletRequest req){
+        GerenciaBloco gb = new GerenciaBloco();
+        
+        Bloco bloco = gb.buscarPorId(id);
+        boolean remover = gb.remover(bloco);
+        
+        if(remover){
+            req.setAttribute("resus", "Bloco  removido com Sucesso");
+            System.out.println("Bloco  removido com Sucesso");
+        }else {
+           req.setAttribute("result", "Erro ao remover bloco");
+            System.out.println("Erro ao remover bloco");
+        }
+        
+        return managerBloco(req);
+    }
+    
     
 }

@@ -39,7 +39,7 @@
                     </li>
                     <li>
                         <div>
-                            <button class="dj-button btn-danger" disabled="">
+                                <button class="dj-button btn-danger" class="dj-button btn-warning">
                                 <img src="/assets/icons/trash.png" class="dj-img__menor">
                             </button>
                         </div>
