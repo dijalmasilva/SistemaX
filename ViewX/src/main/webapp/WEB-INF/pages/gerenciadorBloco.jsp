@@ -63,7 +63,7 @@
                     </thead>
                     <tbody id="ubody">
                         <c:forEach items="${blocos}" var="bloco">
-                            <tr onclick="selectRow(${bloco.nome}); changeColor(this);">
+                            <tr onclick="selectRowName('${bloco.nome}', ${bloco.id}); changeColor(this)">
                                 <td>${bloco.nome}</td>
                             </tr>
                         </c:forEach>

@@ -16,14 +16,13 @@
                 <h2 class="modal-title">Editar Bloco</h2>
             </div>
             <div class="modal-body">
-                <form class="form-group" method="post" action="/home/managerBloco/editar">
+                <form class="form-group" method="post" action="/home/managerBloco/edit">
                     <div>
                         <br>
-                        
-                        <input type="text" name="nomeAntigo" class="invisible"/>
+                        <input type="number" name="id" class="invisible" id="idBloco"/>
                        
                         <input type="text" name="nomeNovo" placeholder="Nome de Bloco" class="form-control"
-                               required="" autofocus="" value="${bloco.nome}"/><br>
+                               required="" autofocus="" value="${bloco.nome}" id="nomeNovo"/><br>
                         <br>
                         <div class="text-right">
                             <input type="submit" class="btn btn-primary btn-lg" value="Editar"/>

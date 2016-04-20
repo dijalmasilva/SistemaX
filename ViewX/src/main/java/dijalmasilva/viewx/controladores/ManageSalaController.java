@@ -35,7 +35,7 @@ public class ManageSalaController {
     public String addSala(Sala s, String bloco, HttpServletRequest req) {
         GerenciaSala gs = new GerenciaSala();
         GerenciaBloco gb = new GerenciaBloco();
-        Bloco b = gb.buscar(bloco);
+        Bloco b = gb.buscarPorNome(bloco);
         s.setBloco(b);
         boolean salvou = gs.salvar(s);
         if (salvou) {

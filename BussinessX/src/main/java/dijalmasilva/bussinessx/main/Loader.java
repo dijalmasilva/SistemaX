@@ -7,15 +7,20 @@ package dijalmasilva.bussinessx.main;
 
 import dijalmasilva.bussinessx.entidades.Bloco;
 import dijalmasilva.bussinessx.entidades.Material;
+import dijalmasilva.bussinessx.entidades.Sala;
 import dijalmasilva.bussinessx.entidades.Usuario;
+import dijalmasilva.bussinessx.enums.TypeSala;
 import dijalmasilva.bussinessx.enums.TypeStatus;
 import dijalmasilva.bussinessx.enums.UserType;
 import dijalmasilva.bussinessx.interfaces.DaoBloco;
 import dijalmasilva.bussinessx.interfaces.DaoMaterial;
+import dijalmasilva.bussinessx.interfaces.DaoSala;
 import dijalmasilva.bussinessx.interfaces.DaoUsuario;
 import dijalmasilva.bussinessx.jpa.DaoBlocoImpl;
 import dijalmasilva.bussinessx.jpa.DaoMaterialImpl;
+import dijalmasilva.bussinessx.jpa.DaoSalaImpl;
 import dijalmasilva.bussinessx.jpa.DaoUsuarioImpl;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,6 +33,22 @@ public class Loader {
         DaoUsuario du = new DaoUsuarioImpl();
         DaoMaterial dm = new DaoMaterialImpl();
         DaoBloco db = new DaoBlocoImpl();
+//        Bloco bloco = new Bloco("Bloco ADS");
+//        db.salvar(bloco);
+        Bloco b = db.buscarPorNome("Bloco ADS");
+        System.out.println(b);
+//        DaoSala ds = new DaoSalaImpl();
+//        Sala s = new Sala("Sala 01", b, 40, TypeSala.COMUM);
+//        ds.salvar(s);
+//        Bloco b = new Bloco("Bloco de Matemática");
+//        Bloco b2 = new Bloco("Bloco Eng. Civil");
+//        db.salvar(b);
+//        db.salvar(b2);
+//        Bloco buscar = db.buscarPorId(151);
+//        buscar.setNome("Bloco de História");
+//        boolean atualizar = db.atualizar(151, buscar);
+//        JOptionPane.showMessageDialog(null, atualizar);
+//        System.out.println(buscar);
 //        Bloco b = new Bloco("Bloco Eng. Civil");
 //        db.salvar(b);
 //        Material material = new Material("Lápis", 35, TypeStatus.DISPONIVEL);
@@ -35,8 +56,8 @@ public class Loader {
 //            dm.salvar(material);
 //            material.setTombamento(0);
 //        }
-        Usuario u2 = new Usuario("admin@gmail.com", "Admin", "xschg123", "foto".getBytes(), UserType.ADMINISTRADOR, "122133");
-        du.salvar(u2);
+//        Usuario u2 = new Usuario("admin@gmail.com", "Admin", "xschg123", "foto".getBytes(), UserType.ADMINISTRADOR, "122133");
+//        du.salvar(u2);
         
 //        DaoFeriado df = new DaoFeriadoImpl();
 //        Usuario u3 = new Usuario("monitor@gmail.com", "Monitor", "dijalma123", "foto".getBytes(), UserType.MONITOR, "123143");
