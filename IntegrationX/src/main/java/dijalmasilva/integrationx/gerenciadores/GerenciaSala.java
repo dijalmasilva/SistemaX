@@ -29,8 +29,8 @@ public class GerenciaSala {
         return dao.remover(s);
     }
     
-    public boolean atualizar(Sala s){
-        return dao.atualizar(s.getId(), s);
+    public boolean atualizar(long id, Sala s){
+        return dao.atualizar(id, s);
     }
     
     public Sala buscar(long id){

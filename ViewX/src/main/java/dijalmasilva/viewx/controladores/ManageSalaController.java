@@ -45,4 +45,20 @@ public class ManageSalaController {
         }
         return managerSala(req);
     }
+    
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
+    public String editarSala(Sala s, String bloco, long id, HttpServletRequest req){
+        GerenciaSala gs = new GerenciaSala();
+        GerenciaBloco gb = new GerenciaBloco();
+        Bloco b = gb.buscarPorNome(bloco);
+        s.setBloco(b);
+        boolean atualizou = gs.atualizar(id, s);
+        if (atualizou){
+            req.setAttribute("result", "Sala editada com sucesso!");
+        }else{
+            req.setAttribute("result", "Não foi possível editar a sala!");
+        }
+        
+        return managerSala(req);
+    }
 }

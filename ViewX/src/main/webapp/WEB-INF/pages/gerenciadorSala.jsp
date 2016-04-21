@@ -18,6 +18,7 @@
             </ul>
         </div>
         <%@include file="modalNovaSala.jsp" %>
+        <%@include file="modalEditarSala.jsp" %>
         <%@include file="modalResposta.jsp" %>
         <div class="dj-section">
             <div class="dj-list__funcionalidades">
@@ -31,7 +32,7 @@
                     </li>
                     <li>
                         <div>
-                            <button class="dj-button btn-warning" disabled="">
+                            <button class="dj-button btn-warning" data-toggle="modal" data-target="#editarSala" disabled="" id="editSala">
                                 <img src="/assets/icons/edit_black.png">
                             </button>
                         </div>
@@ -65,7 +66,7 @@
                     </thead>
                     <tbody id="ubody">
                         <c:forEach items="${rooms}" var="room">
-                            <tr onclick="selectRow(${room.id}); changeColor(this);">
+                            <tr onclick="selectRowSala(${room.id}, '${room.nome}', '${room.bloco.nome}', ${room.capacidade}, '${room.tipo}'); changeColor(this);">
                                 <td>${room.nome}</td>
                                 <td>${room.bloco.nome}</td>
                                 <td>${room.capacidade}</td>

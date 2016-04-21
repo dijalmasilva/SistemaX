@@ -61,9 +61,19 @@ function selectRow(id){
 }
 
 function selectRowName(nome, id){
-    console.log('selecionou!');
     $('#idBloco').val(id);
     $('#nomeNovo').val(nome);
+}
+
+function selectRowSala(id, nome, bloco, capacidade, tipo){
+    $('#editSala').removeAttr('disabled');
+    $('#idSala').val(id);
+    $('#nomeSala').val(nome);
+    $('#blocoSala').val(bloco);
+    $('#blocoSala').text(bloco);
+    $('#capacidadeSala').val(capacidade);
+    $('#tipoSala').val(tipo);
+    $('#tipoSala').text(tipo);
 }
 
 function loadFoto(valor){
