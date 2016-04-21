@@ -3,6 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+var bloco = null;
+
 $(document).ready(function () {
 
     abrirModalNotificacao();
@@ -63,6 +66,7 @@ function selectRow(id){
 function selectRowName(nome, id){
     $('#idBloco').val(id);
     $('#nomeNovo').val(nome);
+    $("input#remove-id").attr("value", id);
 }
 
 function selectRowSala(id, nome, bloco, capacidade, tipo){

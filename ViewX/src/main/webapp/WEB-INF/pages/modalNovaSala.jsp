@@ -20,7 +20,7 @@
                     <div>
                         <br>
                         <input type="text" name="nome" placeholder="Sala" class="form-control"
-                               required="" autofocus=""/><br>
+                               required="" autofocus="" maxlength="50"/><br>
                         <select name="bloco" class="form-control">
                             <c:forEach items="${blocos}" var="bloco">
                                 <option value="${bloco.nome}">${bloco.nome}</option>
