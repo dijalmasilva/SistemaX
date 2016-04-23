@@ -19,11 +19,12 @@
                 <form class="form-group" method="post" action="/home/managerFeriado/add">
                     <div>
                         <br>
-                        <input type="text" name="nome" placeholder="Nome do Feriado" class="form-control"
+                        <input type="text" name="title" placeholder="Nome do Feriado" class="form-control"
                                required="" autofocus=""/><br>
                         <br>
-                        <input type="date" name="data" class="form-control"
-                               required="" /><br>
+                        <input type="date" name="start" class="form-control" required="" />
+                        <input type="date" name="end" class="form-control" required="" />
+                        <br>
                         <br>
                         <div class="text-right">
                             <input type="submit" class="btn btn-primary btn-lg" value="Cadastrar"/>

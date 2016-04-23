@@ -31,7 +31,7 @@ $(document).ready(function (){
         editable: true,
         eventLimit: true,
         events: {
-            url: 'getEventos.json'
+            url: '/home/managerFeriado/getEventos.json'
         },
         eventClick: function (event, element) {
 

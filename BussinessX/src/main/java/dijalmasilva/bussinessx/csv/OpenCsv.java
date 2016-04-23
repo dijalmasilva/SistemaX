@@ -12,7 +12,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,37 +28,42 @@ public class OpenCsv {
      *
      * @param filename
      * @return {@linkplain List}
+     * @throws java.text.ParseException
      */
     public List<Feriado> lerCSV(File filename) throws ParseException {
         try {
-            
-            CSVReader reader = new CSVReader(new InputStreamReader(
-                    new FileInputStream(filename), "UTF-8"), ';', '\'', 1);
-            try {
-                
-                String[] values = reader.readNext();
-                List<Feriado> feriados = new ArrayList<>();
-                
-                while (values != null) {
-                    String feriado = values[0];
-                    String split[] = feriado.split(",");
-                    
-                    Feriado f = new Feriado();
-                    f.setNome(split[1]);
-                    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-                    java.sql.Date data = new java.sql.Date(format.parse(split[0]).getTime());                    
-                    f.setData(data.toLocalDate());
-                    feriados.add(f);
-                    
-                    values = reader.readNext();
+            if (filename.getName().endsWith(".csv")) {
+                CSVReader reader = new CSVReader(new InputStreamReader(
+                        new FileInputStream(filename), "UTF-8"), ';', '\'', 1);
+                try {
+                    String[] values = reader.readNext();
+                    List<Feriado> feriados = new ArrayList<>();
+                    while (values != null) {
+                        String feriado = values[0];
+                        String split[] = feriado.split(",");
+                        Feriado f = new Feriado();
+                        f.setTitle(split[1]);
+
+                        String data = split[0];
+                        String datasplit[] = data.split("/");
+
+                        String dataConvertida = datasplit[2] + datasplit[1] + datasplit[0];
+                        f.setStart(dataConvertida);
+                        f.setEnd(dataConvertida);
+                        feriados.add(f);
+
+                        values = reader.readNext();
+                    }
+
+                    return feriados.isEmpty() ? null : feriados;
+                } finally {
+                    reader.close();
                 }
-                
-                return feriados.isEmpty() ? null : feriados;
-            } finally {
-                reader.close();
+            } else {
+                return null;
             }
+
         } catch (IOException e) {
-            e.printStackTrace();
         }
         return null;
     }
