@@ -5,9 +5,9 @@
  */
 
 
-$(document).ready(function (){
-   
-     $('#calendar').fullCalendar({
+$(document).ready(function () {
+
+    $('#calendar').fullCalendar({
         ignoreTimezone: false,
         monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
         monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
@@ -33,19 +33,11 @@ $(document).ready(function (){
         events: {
             url: '/home/managerFeriado/getEventos.json'
         },
-        eventClick: function (event, element) {
-
-            if (event) {
-                var moment = $('#calendar').fullCalendar('getDate').format();
-               
-                
-                liberarBotoesFeriados();
-                $('#nomeFeriado').val(event.title);
-                $('#dataFeriado').val(data);
-                alert($('#nomeFeriado').val());
-                alert($('#dataFeriado').val());
-            }
+        eventClick: function (calEvent) {
+            tituloDoEvento = calEvent.title;                             
+                $('#excluirFeriado').removeAttr('disabled');
+                $(this).css('background', 'red');
+                aux = 1;            
         }
-
     });
 });

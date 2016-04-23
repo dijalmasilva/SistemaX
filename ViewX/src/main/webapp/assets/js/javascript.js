@@ -59,17 +59,17 @@ function buscar() {
     }
 }
 
-function selectRow(id){
-    
+function selectRow(id) {
+
 }
 
-function selectRowName(nome, id){
+function selectRowName(nome, id) {
     $('#idBloco').val(id);
     $('#nomeNovo').val(nome);
     $("input#remove-id").attr("value", id);
 }
 
-function selectRowSala(id, nome, bloco, capacidade, tipo){
+function selectRowSala(id, nome, bloco, capacidade, tipo) {
     $('#editSala').removeAttr('disabled');
     $('#idSala').val(id);
     $('#nomeSala').val(nome);
@@ -80,54 +80,54 @@ function selectRowSala(id, nome, bloco, capacidade, tipo){
     $('#tipoSala').text(tipo);
 }
 
-function loadFoto(valor){
+function loadFoto(valor) {
     var reader = new FileReader(valor);
     reader.onload = function (e) {
         setImage(e.target.result);
     };
-    
+
     reader.readAsDataURL(valor.files[0]);
 }
 
-function loadPicture(valor){
+function loadPicture(valor) {
     var reader = new FileReader(valor);
     reader.onload = function (e) {
         setImage(e.target.result);
     };
-    
+
     reader.readAsDataURL(valor.files[0]);
 }
 
-function loadFotoPerfil(valor){
+function loadFotoPerfil(valor) {
     var reader = new FileReader(valor);
     reader.onload = function (e) {
         setImagePerfil(e.target.result);
     };
-    
+
     reader.readAsDataURL(valor.files[0]);
 }
 
-function setImage(image){
+function setImage(image) {
     $('#img-loader').attr('src', image);
 }
 
-function setImagePerfil(image){
+function setImagePerfil(image) {
     $('#img-loader__perfil').attr('src', image);
 }
 
-function escolherFoto(){
+function escolherFoto() {
     $('#inp-foto').trigger("click");
 }
 
-function escolherFotoPerfil(){
+function escolherFotoPerfil() {
     $('#inp-foto__perfil').trigger("click");
 }
 
-function resetColors(){
+function resetColors() {
     $('tr').removeClass('tr-select');
 }
 
-function changeColor(row){
+function changeColor(row) {
     resetColors();
     $(row).addClass('tr-select');
 }
@@ -146,4 +146,12 @@ function abrirModalNotificacao() {
             bottom: "-=20px"
         });
     }, 5000);
+}
+
+function excluirFeriado() {
+    b = window.confirm("Deseja realmente remover este feriado?");
+    if (b) {
+        $('#removeFeriado').val(tituloDoEvento);
+        $('#subRemoveFeriado').trigger('click');
+    }
 }

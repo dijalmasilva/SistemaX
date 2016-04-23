@@ -97,4 +97,22 @@ public class ManageFeriadoController {
         }
         return managerFeriado(req);
     }
+
+    @RequestMapping(value = {"/remove"}, method = RequestMethod.POST)
+    public String removerFeriado(String title, HttpServletRequest req) {
+        System.out.println(title);
+        GerenciaFeriado gf = new GerenciaFeriado();
+        List<Feriado> todos = gf.todos();
+        for (Feriado todo : todos) {
+            if (todo.getTitle().equals(title)) {
+                boolean remover = gf.remover(todo);
+                if (remover) {
+                    req.setAttribute("result", "Feriado removido com sucesso!");
+                }
+            }
+        }
+
+        return managerFeriado(req);
+    }
+
 }

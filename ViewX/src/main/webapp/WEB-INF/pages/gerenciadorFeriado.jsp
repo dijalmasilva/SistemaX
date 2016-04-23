@@ -39,9 +39,15 @@
                     </li>
                     <li>
                         <div>
-                            <button class="dj-button btn-danger" disabled="">
+                            <button id="excluirFeriado" class="dj-button btn-danger" disabled="" onclick="excluirFeriado()">
                                 <img src="/assets/icons/trash.png" class="dj-img__menor">
                             </button>
+                            <div class="dj-invisible">
+                                <form action="/home/managerFeriado/remove" method="post">
+                                    <input name="title" value="" id="removeFeriado">     
+                                    <input type="submit" id="subRemoveFeriado">
+                                </form>
+                            </div>
                         </div>
                     </li>
                     <li>
@@ -61,6 +67,6 @@
         </div>
         <c:if test="${result != null}">
             <button data-toggle="modal" data-target="#modal" class="invisible" id="showModal">
-        </c:if>
+            </c:if>
     </body>
 </html>
