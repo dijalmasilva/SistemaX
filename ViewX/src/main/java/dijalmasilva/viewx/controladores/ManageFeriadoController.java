@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
@@ -36,11 +37,9 @@ public class ManageFeriadoController {
     }
 
     @RequestMapping(value = {"/add"}, method = RequestMethod.POST)
-    public String novoFeriado(String nome, Date data, HttpServletRequest req) {
-        GerenciaFeriado gf = new GerenciaFeriado();
-        LocalDate d = data.toLocalDate();
-        Feriado f = new Feriado(nome, d);
-        boolean salvou = gf.salvar(f);
+    public String novoFeriado(String title, Date start, Date end, HttpServletRequest req) {
+        Feriado feriado = new Feriado(title, "" + start, "" + end, null);
+        boolean salvou = new GerenciaFeriado().salvar(feriado);
         if (salvou) {
             req.setAttribute("result", "Feriado adicionado com sucesso!");
         } else {
@@ -50,15 +49,17 @@ public class ManageFeriadoController {
         return managerFeriado(req);
     }
 
-    @RequestMapping(value = "/getEventos.json")
+    @RequestMapping(value = {"/getEventos.json"})
     public @ResponseBody
-    List GetEventos() throws SQLException {
-        GerenciaFeriado gf = new GerenciaFeriado();
-        List eventos = gf.todos();
-        for (Object evento : eventos) {
-            System.out.println(evento.toString());
+    List<Feriado> GetEventos() {
+
+        List<Feriado> feriados = new ArrayList<Feriado>();
+
+        List<Feriado> ListaDeFeriaods = new GerenciaFeriado().todos();
+        for (Feriado feriado : ListaDeFeriaods) {
+            feriados.add(feriado);
         }
-        return eventos;
+        return feriados;
     }
 
     @RequestMapping(value = {"/import"}, method = RequestMethod.POST)
@@ -73,11 +74,12 @@ public class ManageFeriadoController {
                         = new BufferedOutputStream(new FileOutputStream(new File(caminho)));
                 stream.write(b);
                 stream.close();
-                OpenCsv openCsv = new OpenCsv();               
+                OpenCsv openCsv = new OpenCsv();
                 List<Feriado> lerCSV = openCsv.lerCSV(new File(caminho));
 
                 if (sobrescrever) {
                     for (Feriado csv : lerCSV) {
+                        System.out.println(csv);
                         gf.remover(csv);
                     }
                     for (Feriado csv : lerCSV) {
@@ -95,4 +97,22 @@ public class ManageFeriadoController {
         }
         return managerFeriado(req);
     }
+
+    @RequestMapping(value = {"/remove"}, method = RequestMethod.POST)
+    public String removerFeriado(String title, HttpServletRequest req) {
+        System.out.println(title);
+        GerenciaFeriado gf = new GerenciaFeriado();
+        List<Feriado> todos = gf.todos();
+        for (Feriado todo : todos) {
+            if (todo.getTitle().equals(title)) {
+                boolean remover = gf.remover(todo);
+                if (remover) {
+                    req.setAttribute("result", "Feriado removido com sucesso!");
+                }
+            }
+        }
+
+        return managerFeriado(req);
+    }
+
 }

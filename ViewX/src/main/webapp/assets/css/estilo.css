@@ -127,6 +127,9 @@ body {
     height: 32px !important;
 }
 
+.dj-invisible {
+    display: none !important;
+}
 table {
     width: 98% !important;
     margin: 0px auto;
