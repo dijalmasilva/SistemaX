@@ -6,6 +6,8 @@
 
 package dijalmasilva.viewx.controladores;
 
+import dijalmasilva.integrationx.gerenciadores.GerenciaEvento;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,7 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/home/alocarSala")
 public class ManagerLocacaoSala {
 
-    public String alocarSala(){
+    @RequestMapping(value = "")
+    public String alocarSala(HttpServletRequest req){
+        GerenciaEvento ge = new GerenciaEvento();
+        req.setAttribute("eventos", ge.todos());
         return "alocarSalas";
     }
 }

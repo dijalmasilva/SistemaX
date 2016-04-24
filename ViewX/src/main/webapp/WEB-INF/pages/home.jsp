@@ -44,6 +44,10 @@
                             <img src="/assets/icons/blocos.png" width="40"><br>
                             <a href="/home/managerBloco">Gerenciar Bloco</a>
                         </li>
+                        <li>
+                            <img src="/assets/icons/alocar.png" width="40"><br>
+                            <a href="/home/alocarSala">Alocar Salas</a>
+                        </li>
                     </ul>
                 </div>
             </c:if>
