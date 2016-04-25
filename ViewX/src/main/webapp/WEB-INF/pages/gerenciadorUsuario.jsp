@@ -39,9 +39,15 @@
                     </li>
                     <li>
                         <div>
-                            <button id="remove" class="dj-button btn-danger" disabled="">
+                            <button id="remove" class="dj-button btn-danger" disabled="" onclick="excluirUsuario()">
                                 <img src="/assets/icons/trash.png" class="dj-img__menor">
                             </button>
+                            <div class="dj-invisible">
+                                <form action="/home/manageUser/remove" method="post">
+                                    <input name="id" value="" id="removeUsuario">     
+                                    <input type="submit" id="subRemoveUsuario">
+                                </form>
+                            </div>
                         </div>
                     </li>
                     <li>

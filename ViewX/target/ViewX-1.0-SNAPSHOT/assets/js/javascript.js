@@ -60,11 +60,20 @@ function buscar() {
 }
 
 function selectRow(id, nome, senha, email, matricula) {
+    idUsuarioSelecionado = id;
     $('#idUsuarios').val(id);
     $('#nomeUsuarios').val(nome);
     $('#senhaUsuarios').val(senha);
     $('#emailUsuarios').val(email);
     $('#matriculaUsuarios').val(matricula);    
+}
+
+function excluirUsuario() {
+    b = window.confirm("Deseja realmente remover este Usuario?");
+    if (b) {
+        $('#removeUsuario').val(idUsuarioSelecionado);
+        $('#subRemoveUsuario').trigger('click');
+    } 
 }
 
 idClicado = -1;
