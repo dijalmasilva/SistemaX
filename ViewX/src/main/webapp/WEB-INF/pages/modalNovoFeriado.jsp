@@ -22,7 +22,13 @@
                         <input type="text" name="title" placeholder="Nome do Feriado" class="form-control"
                                required="" autofocus=""/><br>
                         <br>
-                        <input type="date" name="start" class="form-control" required="" />
+                        <div class="text-left">
+                            <label>Inicio</label>
+                        </div>
+                        <input type="date" name="start" class="form-control" required="" /><br>
+                        <div class="text-left">
+                            <label>Fim</label>
+                        </div>
                         <input type="date" name="end" class="form-control" required="" />
                         <br>
                         <br>
