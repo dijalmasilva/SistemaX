@@ -14,32 +14,46 @@
         <div class="dj-breadcrumb">
             <ul>
                 <li><a href="/home">Home</a> ></li>
-                <li>Gerenciar Usuário</li>
+                <li>Alocar Sala</li>
             </ul>
         </div>
-        <%@include file="modalNovoCliente.jsp" %>
+        <%@include file="modalNovoEvento.jsp" %>
         <%@include file="modalResposta.jsp" %>
         <div class="dj-section">
             <div class="dj-list__funcionalidades">
                 <ul>
                     <li>
                         <div>
+                            <button data-toggle="modal" data-target="#novoEvento" class="dj-button btn-primary">
+                                <img src="/assets/icons/newEvent.png">
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <button class="dj-button btn-danger">
+                                <img src="/assets/icons/calendarRemove.png">
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
                             <button data-toggle="modal" data-target="#novoCliente" class="dj-button btn-primary">
-                                <img src="/assets/icons/add_black.png">
+                                <img src="/assets/icons/locker.png">
                             </button>
                         </div>
                     </li>
                     <li>
                         <div>
-                            <button class="dj-button btn-warning" disabled="">
-                                <img src="/assets/icons/edit_black.png">
+                            <button class="dj-button btn-danger">
+                                <img src="/assets/icons/unlocker.png">
                             </button>
                         </div>
                     </li>
                     <li>
                         <div>
-                            <button class="dj-button btn-danger" disabled="">
-                                <img src="/assets/icons/trash.png" class="dj-img__menor">
+                            <button class="dj-button btn-warning">
+                                <img src="/assets/icons/return.png">
                             </button>
                         </div>
                     </li>
@@ -57,17 +71,21 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Email</th>
-                            <th>Papel</th>
+                            <th>Data</th>
+                            <th>Duração</th>
+                            <th>Evento</th>
+                            <th>Situação</th>
+                            <th>Local</th>
                         </tr>
                     </thead>
                     <tbody id="ubody">
-                        <c:forEach items="${users}" var="user">
-                            <tr onclick="selectRow(${user.id}); changeColor(this);">
-                                <td>${user.nome}</td>
-                                <td>${user.email}</td>
-                                <td>${user.tipo}</td>
+                        <c:forEach items="${eventos}" var="evento">
+                            <tr onclick="selectRow(${evento.id}); changeColor(this);">
+                                <td>${evento.inicio}</td>
+                                <td>30h30m00</td>
+                                <td>${evento.nome}</td>
+                                <td>Agendado</td>
+                                <td>${evento.local.nome} - ${evento.local.bloco.nome}</td>
                             </tr>
                         </c:forEach>
                     </tbody>

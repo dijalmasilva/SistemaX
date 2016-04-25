@@ -36,20 +36,23 @@ public class Evento implements Serializable {
     private LocalDate inicio;
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDate termino;
-
+    @OneToOne
+    private Sala local;
+    
     public Evento() {
     }
 
-    public Evento(String nome, String descricao, long participantes, Usuario responsavel, LocalDate inicio, LocalDate termino) {
+    public Evento(String nome, String descricao, long participantes, Usuario responsavel, LocalDate inicio, LocalDate termino, Sala local) {
         this.nome = nome;
         this.descricao = descricao;
         this.participantes = participantes;
         this.responsavel = responsavel;
         this.inicio = inicio;
         this.termino = termino;
+        this.local = local;
     }
 
-    public Evento(long id, String nome, String descricao, long participantes, Usuario responsavel, LocalDate inicio, LocalDate termino) {
+    public Evento(long id, String nome, String descricao, long participantes, Usuario responsavel, LocalDate inicio, LocalDate termino, Sala local) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -57,6 +60,7 @@ public class Evento implements Serializable {
         this.responsavel = responsavel;
         this.inicio = inicio;
         this.termino = termino;
+        this.local = local;
     }
 
     public long getId() {
@@ -113,6 +117,14 @@ public class Evento implements Serializable {
 
     public void setTermino(LocalDate termino) {
         this.termino = termino;
+    }
+
+    public Sala getLocal() {
+        return local;
+    }
+
+    public void setLocal(Sala local) {
+        this.local = local;
     }
 
     @Override

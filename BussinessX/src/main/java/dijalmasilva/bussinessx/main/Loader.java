@@ -6,21 +6,20 @@
 package dijalmasilva.bussinessx.main;
 
 import dijalmasilva.bussinessx.entidades.Bloco;
-import dijalmasilva.bussinessx.entidades.Material;
+import dijalmasilva.bussinessx.entidades.Evento;
 import dijalmasilva.bussinessx.entidades.Sala;
 import dijalmasilva.bussinessx.entidades.Usuario;
-import dijalmasilva.bussinessx.enums.TypeSala;
-import dijalmasilva.bussinessx.enums.TypeStatus;
-import dijalmasilva.bussinessx.enums.UserType;
 import dijalmasilva.bussinessx.interfaces.DaoBloco;
+import dijalmasilva.bussinessx.interfaces.DaoEvento;
 import dijalmasilva.bussinessx.interfaces.DaoMaterial;
 import dijalmasilva.bussinessx.interfaces.DaoSala;
 import dijalmasilva.bussinessx.interfaces.DaoUsuario;
 import dijalmasilva.bussinessx.jpa.DaoBlocoImpl;
+import dijalmasilva.bussinessx.jpa.DaoEventoImpl;
 import dijalmasilva.bussinessx.jpa.DaoMaterialImpl;
 import dijalmasilva.bussinessx.jpa.DaoSalaImpl;
 import dijalmasilva.bussinessx.jpa.DaoUsuarioImpl;
-import javax.swing.JOptionPane;
+import java.time.LocalDate;
 
 /**
  *
@@ -33,10 +32,16 @@ public class Loader {
         DaoUsuario du = new DaoUsuarioImpl();
         DaoMaterial dm = new DaoMaterialImpl();
         DaoBloco db = new DaoBlocoImpl();
+        DaoEvento dv = new DaoEventoImpl();
+        Usuario u = du.buscar(401L);
+        DaoSala ds = new DaoSalaImpl();
+        Sala sala = ds.buscar(301);
+        Evento e = new Evento("Evento 1", "Descricao aqui", 20, u, LocalDate.now(), LocalDate.now(), sala);
+        dv.salvar(e);
 //        Bloco bloco = new Bloco("Bloco ADS");
 //        db.salvar(bloco);
-        Bloco b = db.buscarPorNome("Bloco ADS");
-        System.out.println(b);
+//        Bloco b = db.buscarPorNome("Bloco ADS");
+//        System.out.println(b);
 //        DaoSala ds = new DaoSalaImpl();
 //        Sala s = new Sala("Sala 01", b, 40, TypeSala.COMUM);
 //        ds.salvar(s);
