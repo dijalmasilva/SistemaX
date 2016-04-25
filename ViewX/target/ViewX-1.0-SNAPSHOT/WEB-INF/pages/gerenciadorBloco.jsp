@@ -40,8 +40,8 @@
                     <li>
                         <div>
                             <form action="/home/managerBloco/remove" method="POST">
-                                <input type="hidden" name="id" id="remove-id" />
-                                <button class="dj-button btn-danger" id="bt-remove">
+                                <input type="hidden" name="id" id="remove-id" />                                
+                                <button class="dj-button btn-danger" id="bt-remove">                                    
                                     <img src="/assets/icons/trash.png" class="dj-img__menor">
                                 </button>
                             </form>

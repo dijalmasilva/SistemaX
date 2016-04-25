@@ -61,4 +61,21 @@ public class ManageSalaController {
         
         return managerSala(req);
     }
+    
+    @RequestMapping(value = {"/remove"}, method = RequestMethod.POST)
+    public String removeBloco (long id , HttpServletRequest req){
+        System.out.println(id);
+        GerenciaSala gs = new GerenciaSala();        
+        
+        Sala sala = gs.buscar(id);        
+        boolean remover = gs.remover(sala);
+        
+        if(remover){
+            req.setAttribute("resus", "Sala removida com Sucesso");            
+        }else {
+           req.setAttribute("result", "Erro ao remover sala");            
+        }
+        
+        return managerSala(req);
+    }
 }

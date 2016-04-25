@@ -37,7 +37,7 @@
                             <input type="submit" class="btn btn-primary btn-lg" value="Editar"/>
                         </div>
                     </div>
-                    <div class="dj-user__img">
+                    <div class="dj-user__img">                        
                         <img id="img-loader__perfil2" src="" width="200" height="200" ><br><br>
                         <button type="button" class="btn btn-default" onclick="escolherFotoPerfil()">Enviar Foto</button>
                         <input type="file" name="foto" class="invisible" id="inp-foto__perfil" onchange="loadFotoPerfil(this)"/>

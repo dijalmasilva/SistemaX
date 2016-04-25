@@ -109,6 +109,7 @@ function selectRowName(nome, id) {
 }
 
 function selectRowSala(id, nome, bloco, capacidade, tipo) {
+    idSala = id;
     $('#editSala').removeAttr('disabled');
     $('#idSala').val(id);
     $('#nomeSala').val(nome);
@@ -192,5 +193,13 @@ function excluirFeriado() {
     if (b) {
         $('#removeFeriado').val(tituloDoEvento);
         $('#subRemoveFeriado').trigger('click');
+    }
+}
+
+function excluirSala() {      
+    b = window.confirm("Deseja realmente remover esta sala?");
+    if (b) {
+        $('#idSalaRemove').val(idSala);
+        $('#subRemoveSala').trigger('click');
     }
 }

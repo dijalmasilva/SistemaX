@@ -39,10 +39,16 @@
                     </li>
                     <li>
                         <div>
-                            <button class="dj-button btn-danger" disabled="">
+                            <button id="remove" class="dj-button btn-danger" disabled="" onclick="excluirSala()">
                                 <img src="/assets/icons/trash.png" class="dj-img__menor">
                             </button>
-                        </div>
+                            <div class="dj-invisible">
+                                <form action="/home/managerSala/remove" method="post">
+                                    <input name="id" value="" id="idSalaRemove">     
+                                    <input type="submit" id="subRemoveSala">
+                                </form>
+                            </div>
+                        </div>                        
                     </li>
                     <li>
                         <div>
@@ -66,11 +72,13 @@
                     </thead>
                     <tbody id="ubody">
                         <c:forEach items="${rooms}" var="room">
-                            <tr onclick="selectRowSala(${room.id}, '${room.nome}', '${room.bloco.nome}', ${room.capacidade}, '${room.tipo}'); changeColor(this);">
+                            <tr onclick="selectRowSala(${room.id}, '${room.nome}', '${room.bloco.nome}', ${room.capacidade}, '${room.tipo}');
+                                    changeColor(this);
+                                    liberarBotoes(${room.id})">
                                 <td>${room.nome}</td>
                                 <td>${room.bloco.nome}</td>
                                 <td>${room.capacidade}</td>
-                                
+
                                 <td>DISPONIVEL</td>
                             </tr>
                         </c:forEach>
@@ -81,6 +89,6 @@
         </div>
         <c:if test="${result != null}">
             <button data-toggle="modal" data-target="#modal" class="invisible" id="showModal">
-        </c:if>
+            </c:if>
     </body>
 </html>

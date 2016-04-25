@@ -78,9 +78,13 @@ public class ManageFeriadoController {
                 List<Feriado> lerCSV = openCsv.lerCSV(new File(caminho));
 
                 if (sobrescrever) {
+                    List<Feriado> todos = gf.todos();
                     for (Feriado csv : lerCSV) {
-                        System.out.println(csv);
-                        gf.remover(csv);
+                        for (Feriado todo : todos) {
+                            if (csv.getTitle().equals(todo.getTitle())) {
+                                gf.remover(todo);
+                            }
+                        }
                     }
                     for (Feriado csv : lerCSV) {
                         gf.salvar(csv);
