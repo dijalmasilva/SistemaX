@@ -64,6 +64,15 @@ public class Usuario implements Serializable{
         this.tipo = tipo;
         this.matricula = matricula;
     }
+    
+    public Usuario(Long id, String email, String nome, String senha, UserType tipo, String matricula) {
+        this.id = id;
+        this.email = email;
+        this.nome = nome;
+        this.senha = senha;        
+        this.tipo = tipo;
+        this.matricula = matricula;
+    }
 
     public String getEmail() {
         return email;

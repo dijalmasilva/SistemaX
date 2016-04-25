@@ -6,6 +6,7 @@
 package dijalmasilva.viewx.controladores;
 
 import dijalmasilva.bussinessx.entidades.Usuario;
+import dijalmasilva.bussinessx.enums.UserType;
 import dijalmasilva.integrationx.gerenciadores.GerenciaUsuario;
 import dijalmasilva.viewx.entidades_form.UsuarioForm;
 import java.io.File;
@@ -82,5 +83,20 @@ public class ManageUserController {
         } else {
             req.setAttribute("result", "Erro ao editar usuário!");
         }
+    }
+
+    @RequestMapping(value = {"/editUsuarios"}, method = RequestMethod.POST)
+    public String editarUsuarios(long id, String nome, String senha, String email, String matricula, UserType tipo,
+            HttpServletRequest req) {
+        GerenciaUsuario gu = new GerenciaUsuario();
+        Usuario usuario = new Usuario(id, email, nome, senha, tipo, matricula);
+        boolean atualizou = gu.atualizar(usuario.getId(), usuario);
+        if (atualizou) {
+            req.setAttribute("result", "Usuário editado com sucesso!");
+        } else {
+            req.setAttribute("result", "Erro ao editar usuário!");
+        }
+        return manageUser(req);
+
     }
 }

@@ -59,8 +59,38 @@ function buscar() {
     }
 }
 
-function selectRow(id) {
+function selectRow(id, nome, senha, email, matricula) {
+    $('#idUsuarios').val(id);
+    $('#nomeUsuarios').val(nome);
+    $('#senhaUsuarios').val(senha);
+    $('#emailUsuarios').val(email);
+    $('#matriculaUsuarios').val(matricula);    
+}
 
+idClicado = -1;
+function liberarBotoes(idUsuario) {
+
+    if (idClicado === -1) {
+        $('#edit').removeAttr('disabled');
+        $('#remove').removeAttr('disabled');
+        $('#linha' + idUsuario).addClass('rowSelect');
+        b = false;
+    } else if (idUsuario !== idClicado) {
+        $('#linha' + idClicado).removeClass('rowSelect');
+        $('#linha' + idUsuario).addClass('rowSelect');
+        b = false;
+    } else {
+        $('#linha' + idUsuario).removeClass('rowSelect');
+        $('#edit').attr('disabled', '');
+        $('#remove').attr('disabled', '');
+        b = true;
+    }
+
+    idClicado = idUsuario;
+
+    if (b) {
+        idClicado = -1;
+    }
 }
 
 function selectRowName(nome, id) {

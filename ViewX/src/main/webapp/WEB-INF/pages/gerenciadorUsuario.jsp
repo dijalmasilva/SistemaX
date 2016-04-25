@@ -18,6 +18,7 @@
             </ul>
         </div>
         <%@include file="modalNovoCliente.jsp" %>
+        <%@include file="modalEditarUsuarios.jsp" %>
         <%@include file="modalResposta.jsp" %>
         <div class="dj-section">
             <div class="dj-list__funcionalidades">
@@ -31,14 +32,14 @@
                     </li>
                     <li>
                         <div>
-                            <button class="dj-button btn-warning" disabled="">
+                            <button id="edit" data-toggle="modal" data-target="#editarUsuarios" class="dj-button btn-warning" disabled="">
                                 <img src="/assets/icons/edit_black.png">
                             </button>
                         </div>
                     </li>
                     <li>
                         <div>
-                            <button class="dj-button btn-danger" disabled="">
+                            <button id="remove" class="dj-button btn-danger" disabled="">
                                 <img src="/assets/icons/trash.png" class="dj-img__menor">
                             </button>
                         </div>
@@ -64,7 +65,9 @@
                     </thead>
                     <tbody id="ubody">
                         <c:forEach items="${users}" var="user">
-                            <tr onclick="selectRow(${user.id}); changeColor(this);">
+                            <tr onclick="liberarBotoes(${user.id});
+                                    selectRow('${user.id}', '${user.nome}', '${user.senha}', '${user.email}', '${user.matricula}');
+                                    changeColor(this);">
                                 <td>${user.nome}</td>
                                 <td>${user.email}</td>
                                 <td>${user.tipo}</td>
@@ -77,7 +80,7 @@
         </div>
         <c:if test="${result != null}">
             <button data-toggle="modal" data-target="#modal" class="invisible" id="showModal">
-        </c:if>
+            </c:if>
     </body>
     <%@include file="javascripts.jsp" %>
 </html>
